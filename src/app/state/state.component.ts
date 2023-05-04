@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-state',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./state.component.scss']
 })
 export class StateComponent implements OnInit {
+
+  agents: Observable<string>;
 
   constructor() { }
 
