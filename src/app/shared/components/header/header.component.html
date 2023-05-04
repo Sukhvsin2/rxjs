@@ -1,3 +1,14 @@
 <div class="header">
-    header
+    <div class="logo">Home</div>
+    <div class="headerContent">
+        <div class="options">
+            <span class="option">option1</span>
+            <span class="option">option2</span>
+            <span class="option">option3</span>
+        </div>
+        <div class="cart">
+            Cart
+            <span *ngIf="cart" class="cartValue">{{cart}}</span>
+        </div>
+    </div>
 </div>
