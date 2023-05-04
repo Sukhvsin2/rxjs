@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable, fromEvent, of} from 'rxjs';
+import { Component, OnInit} from '@angular/core';
+import { Observable, of} from 'rxjs';
+import { StateService } from './service/state.service';
 
 @Component({
   selector: 'app-state',
@@ -12,9 +13,10 @@ export class StateComponent implements OnInit {
   agentNames:string[] = [];
   names: Observable<string[]> = of([])
 
-  constructor() { }
+  constructor(private stateService: StateService) { }
 
   ngOnInit(): void {
+    this.stateService.init()
     this.agents = new Observable(
       function(observer){
         try {

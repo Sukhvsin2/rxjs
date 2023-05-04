@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StateComponent } from './state/state.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CardsComponent } from './shared/component/cards/cards.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StateComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
