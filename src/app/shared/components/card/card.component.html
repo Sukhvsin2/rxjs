@@ -1,1 +1,10 @@
-<p>card works!</p>
+<div class="card">
+    <div class="cardHead">{{cardDetail.title}}</div>
+    <div class="cardBody">
+        <img src='{{cardDetail.image}}'/>
+    </div>
+    <div class="cardFoot">
+        <div class="price">${{cardDetail.price}}</div>
+        <button>Add to Cart</button>
+    </div>
+</div>

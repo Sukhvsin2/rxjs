@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Observable, of} from 'rxjs';
-import { StateService } from './service/state.service';
+import { StateService } from './state.service';
 
 @Component({
   selector: 'app-state',
@@ -13,10 +13,12 @@ export class StateComponent implements OnInit {
   agentNames:string[] = [];
   names: Observable<string[]> = of([])
 
+  products$: Observable<any[]>;
+
   constructor(private stateService: StateService) { }
 
   ngOnInit(): void {
-    this.stateService.init()
+    this.stateService.init();
     this.agents = new Observable(
       function(observer){
         try {
@@ -29,6 +31,7 @@ export class StateComponent implements OnInit {
       }
     )
     this.getNames();
+    this.products$ = this.stateService.getProducts()
   }
 
   getNames(){
